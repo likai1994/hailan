@@ -2,7 +2,6 @@
              var $parent = $(this).parent();
              $parent.find(".formtips").remove();
              //验证用户名
-             
              if( $(this).is('#username') ){
              		var reg = /^1[35784][0-9]{9}$/;								
                     if( reg.test(this.value)==false  ){                   	
@@ -46,8 +45,8 @@
            		}
            }
            if( $(this).is('.put3') ){
-           		console.log($("#put2")[0].value)
-           		console.log(this.value)
+           		//console.log($("#put2")[0].value)
+           		//console.log(this.value)
              	if(this.value==($("#put2")[0].value) && this.value!=""){
              		var errorMsg = '√';
                         $parent.append('<span style="color:green;" class="formtips onError">*'+errorMsg+'</span>');
@@ -57,14 +56,5 @@
              	}
              }
          
+         
         })
-        
-          $(".put5").click(function(){
-          	
-          		console.log($("#put2")[0].value)
-          	    console.log($("#mima").css("color"))
-           		if(($("#put2")[0].value)=="" || $("#mima").css("color")=="rgb(255, 0, 0)"){
-           			alert("输入错误")
-           		}
-           
-          })

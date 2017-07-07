@@ -417,8 +417,7 @@
                     </li>
                </ul>
        	</div>
-    </section>
-    
+    </section>    
 
     <section id="guide">
     	<div class="guide">
@@ -468,17 +467,13 @@
         <p>增值电信业务经营许可证·苏B1-20110038</p>
         <p>&copy;2014-2018 江阴新风尚电子商务有限公司 版权所有 HLA Icn. All Rights Reserved</p>
     </footer>
-    <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
-    <script type="text/javascript" src="js/caidan.js"></script>
-    <script type="text/javascript" src="js/xiangqing.js"></script>
+    
 </body>
 </html>
 
-<script>
-	$(function(){$(".i1").click(function(){$('body,html').animate({scrollTop:0},400);return false;});})
-</script>
-</body>
-</html>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/caidan.js"></script>
+<script type="text/javascript" src="js/xiangqing.js"></script>
 <script>
 	$(".a1").click(function(){
 		
@@ -486,9 +481,7 @@
 		$(".a2").css({border:"2px solid #b8b7bd"})
 		$(".a3").css({border:"2px solid #b8b7bd"})
 		$(".a4").css({border:"2px solid #b8b7bd"})
-		
-		
-		
+
 	})
 	
 	$(".a2").click(function(){
@@ -511,5 +504,29 @@
 		$(".a3").css({border:"2px solid #b8b7bd"})
 		$(".a1").css({border:"2px solid #b8b7bd"})
 		
+	})
+	$(".a-1").click(function(){
+		$(".a-1").css({border:"1px solid #f00"})
+		$(".a-2").css({border:"0"})
+		$(".a-3").css({border:"0"})
+		$(".neirong1").css({display:"block"})
+		$(".neirong2").css({display:"none"})
+		$(".neirong3").css({display:"none"})
+	})
+	$(".a-2").click(function(){
+		$(".a-2").css({border:"1px solid #f00"})
+		$(".a-1").css({border:"0"})
+		$(".a-3").css({border:"0"})
+		$(".neirong2").css({display:"block"})
+		$(".neirong1").css({display:"none"})
+		$(".neirong3").css({display:"none"})
+	})
+	$(".a-3").click(function(){
+		$(".a-3").css({border:"1px solid #f00"})
+		$(".a-1").css({border:"0"})
+		$(".a-2").css({border:"0"})
+		$(".neirong3").css({display:"block"})
+		$(".neirong1").css({display:"none"})
+		$(".neirong2").css({display:"none"})
 	})
 </script>

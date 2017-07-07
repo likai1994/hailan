@@ -185,16 +185,19 @@
             	<b>使用手机号注册</b>
             </div>
             <div class="zhuce-b">
-            	<div class="box1"><span>手机号： </span><input class="put1" id="username"/></div>
-                <div class="box2"><span>设定密码： </span><input class="put2" id="put2" style="margin-bottom:5px ;" type="password"/></div>
-                <div id="div1" style="border:1px black solid;width:60px;height:10px;float:left;margin-left:191px;"></div>
-				<div id="div2" style="border:1px black solid;width:60px;height:10px;float:left;"></div>
-				<div id="div3" style="border:1px black solid;width:60px;height:10px;float:left;"></div>
-               	<div class="box3"><span>确认密码： </span><input class="put3" type="password"/></div>
-                <div class="box4"><span>验证码：</span></span><input class="put4" type="text"/></div>
-                <div class="box5"><span>手机验证码：</span><input class="put5" type="text"/><input type="button" value="获取验证码" style="height:34px;width:158px; background:#d9534f; border-radius:5px;color:#fff;margin-left:16px"/></div>
-                <input class="put5" type="button" value="提交" style="width:98px;height:32px;color:#fff; background:#d9534f;border-radius:5px;margin:56px 294px"/>
+            	
+	            	<div class="box1"><span>手机号： </span><input class="put1" id="put1" name="userName"/></div>
+	                <div class="box2"><span>设定密码： </span><input class="put2" id="put2" style="margin-bottom:5px ;" type="password" name="userPass"/></div>
+	                <div id="div1" style="border:1px black solid;width:60px;height:10px;float:left;margin-left:191px;"></div>
+					<div id="div2" style="border:1px black solid;width:60px;height:10px;float:left;"></div>
+					<div id="div3" style="border:1px black solid;width:60px;height:10px;float:left;"></div>
+	               	<div class="box3"><span>确认密码： </span><input class="put3" type="password"/></div>
+	                <div class="box4"><span>验证码：</span></span><input class="put4" type="text"/></div>
+	                <div class="box5"><span>手机验证码：</span><input class="put5" type="text"/><input type="button" value="获取验证码" style="height:34px;width:158px; background:#d9534f; border-radius:5px;color:#fff;margin-left:16px"/></div>
+	               	<input class="put6" type="button" value="提交" style="width:98px;height:32px;color:#fff; background:#d9534f;border-radius:5px;margin:56px 294px"/>
+               	
             </div>
+            
         </div>
     </section>
       
@@ -252,3 +255,48 @@
     
 </body>
 </html>
+<script type="text/javascript">
+	$(".put6").click(function(){
+	$.ajax({
+		url:"php/regSave.php",
+		async:true,
+		data:"userName="+$('#put1').val()+"&userPass="+$("#put2").val(),
+		type:"post",
+		success:function(data){
+			console.log(data)
+			if(data=="1"){
+				//保存cookie
+				location.href="denglu.html";
+			}else{
+				alert("注册失败")
+			}
+		}		
+	});	
+});
+	
+	
+	
+	/*<form action="php/regSave.php" method="post">*/
+/*$(function(){
+	$(".put6").click(function(){		
+		$.post("regSave.php",
+			{
+//				userName:$(".kuang5").val(),
+				userName:$("#账号").val(),
+				userPass:$("#密码").val(),
+			},
+			function(data){
+				//console.log(data);
+				if(data==1){
+					saveCookie("userId",$("#账号").val(),7);
+						saveCookie("userPass",$("#密码").val(),7);
+				location.href="index.html";
+				}else{
+						alert("登录失败，用户名或者密码不对！");
+					}
+				}
+			)
+		});
+});*/
+</script>
+
