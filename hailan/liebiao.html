@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>所有商品</title>
 <link href="css/public.css" rel="stylesheet" type="text/css">
-<link href="css/style4.css" rel="stylesheet" type="text/css">
+<link href="css/liebiao.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 	<header>
@@ -227,47 +227,11 @@
                 <div class="box1">
                     <p>热销排行</p>
                 </div>
-                <ul>
-                	<li>
-                    	<a href="#">
-                        	<img src="images/HKCAJ2V021A_10600_1--w_460_h_460.jpg"/>
-                            <p><i>HLA海澜之家时尚舒适九分裤</i></p>
-                            <span>售价<b>￥158.00</b></span>
-                        </a>
-                    </li>
-                    <li>
-                    	<a href="#">
-                        	<img src="images/HNECJ2V053A_15709_1--w_460_h_460.jpg"/>
-                            <p><i>HLA海澜之家格纹短袖休闲衬</i></p>
-                            <span>售价<b>￥138.00</b></span>
-                        </a>
-                    </li>
-                    <li>
-                    	<a href="#">
-                        	<img src="images/HNTBD2V502A_16798_1--w_460_h_460.jpg"/>
-                            <p><i>HLA海澜之家镶拼POLO衫2017</i></p>
-                            <span>售价<b>￥128.00</b></span>
-                        </a>
-                    </li>
-                    <li>
-                    	<a href="#">
-                        	<img src="images/HNTBJ2V067A_14145_1--w_460_h_460.jpg"/>
-                            <p><i>HLA海澜之家印花t恤2017夏季新</i></p>
-                            <span>售价<b>￥78.00</b></span>
-                        </a>
-                    </li>
-                    <li>
-                    	<a href="#">
-                        	<img src="images/HNTBJ2V206A_16906_1--w_460_h_460.jpg"/>
-                            <p><i>HLA海澜之家印花短袖t恤2017夏</i></p>
-                            <span>售价<b>￥78.00</b></span>
-                        </a>
-                    </li>
-                </ul>
+                <ul class="ul1"></ul>
                 <div class="box2">
                     <p>最近浏览过的宝贝</p>
 				</div>
-                <ul class="ul1">
+                <ul class="ul2">
                     <li>
                         <a href="#">
                             <img src="images/HNZWJ3V046A_19006_1--w_460_h_460.jpg"/>
@@ -366,11 +330,12 @@
     
 </body>
 </html>
+<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
+<script type="text/javascript" src="js/caidan.js"></script>
 <script>
 	$(function(){$(".i1").click(function(){$('body,html').animate({scrollTop:0},400);return false;});})
 </script>
-<script type="text/javascript" src="js/jquery-1.8.3.js"></script>
-<script type="text/javascript" src="js/caidan.js"></script>
+
 <script>
 $(function(){
 	$.ajax({
@@ -385,6 +350,23 @@ $(function(){
 			let goodsName=obj[i].goodsName;//名字
 			let str="<li><a href='xiangqing.html'><img src='"+goodsImg+"'/><p><i>"+goodsName+"</i></p><span>售价<b>￥"+goodsPrice+".00</b></span></a></li>";
 			$(".list").append(str);
+		}
+		}
+	});
+})
+$(function(){
+	$.ajax({
+		url:"php/rexiao.php",
+		type:"get",
+		success:function(data){
+		var obj=eval(data);
+		for(i=0;i<5;i++){
+			let goodsId=obj[i].goodsId;//1
+			let goodsPrice=obj[i].goodsPrice;//价格
+			let goodsImg=obj[i].goodsImg;//图片
+			let goodsName=obj[i].goodsName;//名字
+			let str="<li><a href='#'><img src='"+goodsImg+"'/><p><i>"+goodsName+"</i></p><span>售价<b>￥"+goodsPrice+".00</b></span></a></li>";
+			$(".ul1").append(str);
 		}
 		}
 	});
