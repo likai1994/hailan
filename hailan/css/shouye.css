@@ -7,6 +7,8 @@ header .header .header-l .span{color:#666;margin-left:5px;}
 
 header .header .header-l .a{color:#333; font-weight:700;}
 header .header .header-l .a:hover{color:#C03;text-decoration:underline}
+header .header .header-l u{display:none;cursor:pointer;float:right;margin-left:5px;}
+header .header .header-l u:hover{color:#C03;text-decoration:underline}
 header .header .header-l span{margin:0 2px;}
 header .header .header-l b{color:#333; font-weight:700;margin-right:3px;}
 header .header .header-l img{width:14px;height:14px;}

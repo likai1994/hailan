@@ -13,15 +13,15 @@
     	<div class="header margin">
         	<div class="header-l clear">
                 <span class="span">你好，欢迎来到男士服饰！</span>
-                <a href="denglu.html" class="a">请登录</a>
+                <a href="zhuce.html" class="register">免费注册</a>
                 <span>|</span>
                 <b>合作账号登录</b>
                  <a href="#"><img src="images/logo10.jpg"/></a>
                  <a href="#"><img src="images/qqimg.jpg"/></a>
                  <a href="#"><img src="images/taobaoimg.jpg"/></a>
-                
                 <span>|</span>
-                <a href="zhuce.html" class="register">免费注册</a>
+                <a href="denglu.html" class="a" id="denglu">请登录</a>
+                <u id="u">注销</u>
             </div>
             <div class="header-r">
             	<ul>
@@ -392,5 +392,16 @@
 	$(function(){$(".aaa").click(function(){$('body,html').animate({scrollTop:0},400);return false;});})
 </script>
 <script>
-	
+	$(document).ready(function(){
+	  	if(getCookie("userId")!=""){
+	 		$("#denglu").html(getCookie("userId"));
+	 		$("#u").css("display","block")
+	 	}
+	});
+	$("#u").click(function(){
+		removeCookie("userId");
+		$("#denglu").html("请登录")
+		$("#u").css("display","none")
+	})
+
 </script>

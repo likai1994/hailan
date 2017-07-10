@@ -6,7 +6,7 @@
 <link href="css/public.css" rel="stylesheet" type="text/css">
 <link href="css/denglu.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body onload="changeyzm()">
 	<header>
     	<div class="header margin">
         	<div class="header-l clear">
@@ -185,7 +185,12 @@
         	<p class="p">已注册用户</p>
             <div class="box1"><span>用户名：</span><input class="put1" id="userId" type="text"placeholder="请输入Email/手机号登录"/></div>
             <div class="box2"><span>密&nbsp;&nbsp;码： </span><input class="put2" id="passId" type="password"/></div>
-            <div class="box3"><span>验证码：</span></span><input class="put3" type="text"/></div>
+            <div class="box3">
+            	<span>验证码：</span>
+            	<input class="put3" type="text"/>
+            	<span id="showCode" style="display:inline-block;border-radius:20px 5px 20px 5px;text-align:center;margin-left:5px;background:#30a31f;width:48px;onclick="changeyzm()"></span>
+	            <a href="javascript:void(0)" onclick="changeyzm()">看不清，换一张</a>
+            </div>
             <input class="put4" type="checkbox"/><span class="span">记住密码</span>
             <a class="a" href="#">忘记密码</a>
             <input class="put5" type="button" value="提交" style="width:98px;height:32px;color:#fff; background:#d9534f;border-radius:5px;margin:20px 0 14px 264px"/>
@@ -203,7 +208,7 @@
             <p class="p2">简单快捷1分钟即可完成注册</p>
             <p class="p2">注册用户可方便的收藏商品</p>
             <p class="p2">注册用户可方便的管理查询自己的订单</p>
-            <a href="注册.html">免费注册</a>
+            <a href="zhuce.html">免费注册</a>
         </div>  
     </section>
        
@@ -264,22 +269,7 @@
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="js/caidan.js"></script>
 <script type="text/javascript" src="js/cookieTools.js" ></script>
-<script>
-	$(".put5").click(function(){
-	$.ajax({
-		url:"php/denglu.php",
-		async:true,
-		data:"userName="+$('#userId').val()+"&userPass="+$("#passId").val(),
-		type:"post",
-		success:function(data){
-			if(data=="1"){
-				//保存cookie
-				saveCookie("userName",$("#userId").val(),7);
-				location.href="shouye.html";
-			}else{
-				alert("亲，用户名或者密码错误，登录失败！");
-			}
-		}		
-	});	
-});
+<script type="text/javascript" src="js/denglu.js" ></script>
+<script type="text/javascript">
+
 </script>

@@ -7,7 +7,7 @@
 <link href="css/zhuce.css" rel="stylesheet" type="text/css">
 </head>
 
-<body>
+<body onload="changeyzm()">
 	<header>
     	<div class="header margin">
         	<div class="header-l clear">
@@ -186,13 +186,18 @@
             </div>
             <div class="zhuce-b">
             	<form class="form">
-	            <div class="box1"><span>手机号： </span><input class="put1" id="put1" name="userName"/></div>
+	            <div class="box1"><span>手机号： </span><input class="put1" id="put1" name="userName"/><i class="i-1" style="margin-left: 5px;"></i></div>
 	            <div class="box2"><span>设定密码： </span><input class="put2" id="put2" style="margin-bottom:5px ;" type="password" name="userPass"/></div>
 	            <div id="div1" style="border:1px black solid;width:60px;height:10px;float:left;margin-left:191px;"></div>
 				<div id="div2" style="border:1px black solid;width:60px;height:10px;float:left;"></div>
 				<div id="div3" style="border:1px black solid;width:60px;height:10px;float:left;"></div>
-	            <div class="box3"><span>确认密码： </span><input class="put3" type="password"/></div>
-	            <div class="box4"><span>验证码：</span></span><input class="put4" type="text"/></div>
+	            <div class="box3"><span>确认密码： </span><input class="put3" id="put3" type="password"/></div>
+	            <div class="box4">
+	            	<span>验证码：</span>
+	            	<input class="put4" type="text"/>
+	            	<span id="showCode" style="display:inline-block;border-radius:20px 5px 20px 5px;text-align:center;margin-left:5px;background:#30a31f;width:48px;onclick="changeyzm()"></span>
+	            	<a href="javascript:void(0)" onclick="changeyzm()">看不清，换一张</a>
+	            </div>
 	            <div class="box5"><span>手机验证码：</span><input class="put5" type="text"/><input type="button" value="获取验证码" style="height:34px;width:158px; background:#d9534f; border-radius:5px;color:#fff;margin-left:16px"/></div>
 	            <input class="put6" type="button" value="提交" style="width:98px;height:32px;color:#fff; background:#d9534f;border-radius:5px;margin:56px 294px"/>
  	           	</form>
@@ -249,120 +254,12 @@
         <p>增值电信业务经营许可证·苏B1-20110038</p>
         <p>&copy;2014-2018 江阴新风尚电子商务有限公司 版权所有 HLA Icn. All Rights Reserved</p>
     </footer>
-
-    
+   
 </body>
 </html>
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="js/caidan.js"></script>
-<script type="text/javascript" src="js/zhuce.js"></script>
+<script type="text/javascript" src="js/zhuce.js" ></script>
 <script type="text/javascript">
-	$(".put6").click(function(){
-		if(($("#put2")[0].value)==="" || ($("#put1")[0].value)===""){
-				alert("请输入用户名")
-			}else{
-		$.ajax({
-			url:"php/regSave.php",
-			async:true,
-			data:"userName="+$('#put1').val()+"&userPass="+$("#put2").val(),
-			type:"post",
-			success:function(data){
-				//console.log(data)
-				if(data=="1"){
-					
-					location.href="denglu.html";
-				}else{
-					alert("注册失败")
-				}
-			}		
-		});
-		}
-	});
 	
-	$("#put1").keyup(function(){
-		$.ajax({
-			url:"php/yonghuming.php",
-			async:true,
-			data:"userName="+this.value,
-			type:"get",
-			success:function(data){
-				if(data=="1"){
-					$(".i-1").html("该用户已经被注册了");
-				}else{
-					$(".i-1").html("该用户没有人使用");
-				}
-			}		
-		});	
-	});
-
-		$('input').keyup(function(){
-             var $parent = $(this).parent();
-             $parent.find(".formtips").remove();
-             //验证用户名
-             if($(this).is('.put1')){
-             		
-             		var reg = /^1[35784][0-9]{9}$/;								
-                    if( reg.test(this.value)==false  ){                   	
-                        var errorMsg = '请输入电话号码';
-                        $parent.append('<span style="color:red;" class="formtips onError">*'+errorMsg+'</span>');
-                    }else{
-                        var okMsg = '输入正确';
-                        $parent.append('<span style="color:green;" class="formtips onSuccess">*'+okMsg+'</span>');
-                    }
-             }
-            
-           	if($(this).is('.put2')){
-           		//console.log(this.value.length)
-           		
-           		if(this.value=="" || this.value.length<6){
-           			var errorMsg = '密码最少6位';
-                        $parent.append('<span style="color:red;"  id="mima"  class="formtips onError">*'+errorMsg+'</span>');
-                     	$("#div1").css("background","red");
-           				$("#div2").css("background","white");
-           				$("#div3").css("background","white");
-                        
-           		}else{
-           			var errorMsg = '√';
-                        $parent.append('<span style="color:green;"  id="mima"  class="formtips onError">*'+errorMsg+'</span>');
-           		}
-           		if(this.value.length>6 && this.value.length<10){
-           			$("#div1").css("background","red");
-           			$("#div2").css("background","yellow");
-           			$("#div3").css("background","white");
-           		}
-           		if(this.value.length>=10){
-           			$("#div1").css("background","red");
-           			$("#div2").css("background","yellow");
-           			$("#div3").css("background","green");
-           		}
-           		if(this.value=="" ||this.value.length==0){
-           			$("#div2").css("background","white");
-           			$("#div1").css("background","white");
-           			$("#div3").css("background","white");
-                        
-           		}
-           }
-           	if( $(this).is('.put3') ){
-           		
-             	if(this.value==($("#put2")[0].value) && this.value!=""){
-             		var errorMsg = '√';
-                        $parent.append('<span style="color:green;" class="formtips onError">*'+errorMsg+'</span>');
-             	}else{
-             		var errorMsg = '输入错误';
-                        $parent.append('<span style="color:red;"class="formtips onError">*'+errorMsg+'</span>');
-             	}
-             }
-
-        })
-		
-		
-		
-		
-/*var form = document.getElementById('form');
-// 为form绑定监听提交表单事件
-form.addEventListener('submit', function(event) {
- 
-    //阻止表单提交
-    event.preventDefault();
-})*/
 </script>
