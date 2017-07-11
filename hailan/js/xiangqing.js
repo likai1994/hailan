@@ -157,7 +157,7 @@ $(function(){
 		boxWidth:400,
 		boxHeight:466,
 		times:2,
-		imgArr:["images/fang1.jpg","images/fang2.jpg","images/fang3.jpg","images/fang4.jpg","images/fang5.jpg"],
+		imgArr:["images/fang1.jpg","images/fang1.jpg","images/fang1.jpg","images/fang1.jpg","images/fang1.jpg"],
 		imgWidth:335,
 		imgHeight:335,
 		zoomColor:'yellow',
@@ -176,3 +176,58 @@ $(function(){
 		btnFontHeighColor:'red'
 	})
 })	
+	$(".a1").click(function(){
+		
+		$(".a1").css({border:"2px solid #C40000"})
+		$(".a2").css({border:"2px solid #b8b7bd"})
+		$(".a3").css({border:"2px solid #b8b7bd"})
+		$(".a4").css({border:"2px solid #b8b7bd"})
+
+	})
+	
+	$(".a2").click(function(){
+		$(".a2").css({border:"2px solid #C40000"})
+		$(".a1").css({border:"2px solid #b8b7bd"})
+		$(".a3").css({border:"2px solid #b8b7bd"})
+		$(".a4").css({border:"2px solid #b8b7bd"})
+		
+	})
+	$(".a3").click(function(){
+		$(".a3").css({border:"2px solid #C40000"})
+		$(".a2").css({border:"2px solid #b8b7bd"})
+		$(".a1").css({border:"2px solid #b8b7bd"})
+		$(".a4").css({border:"2px solid #b8b7bd"})
+		
+	})
+	$(".a4").click(function(){
+		$(".a4").css({border:"2px solid #C40000"})
+		$(".a2").css({border:"2px solid #b8b7bd"})
+		$(".a3").css({border:"2px solid #b8b7bd"})
+		$(".a1").css({border:"2px solid #b8b7bd"})
+		
+	})
+	$(".a-1").click(function(){
+		$(".a-1").css({border:"1px solid #f00"})
+		$(".a-2").css({border:"0"})
+		$(".a-3").css({border:"0"})
+		$(".neirong1").css({display:"block"})
+		$(".neirong2").css({display:"none"})
+		$(".neirong3").css({display:"none"})
+	})
+	$(".a-2").click(function(){
+		$(".a-2").css({border:"1px solid #f00"})
+		$(".a-1").css({border:"0"})
+		$(".a-3").css({border:"0"})
+		$(".neirong2").css({display:"block"})
+		$(".neirong1").css({display:"none"})
+		$(".neirong3").css({display:"none"})
+	})
+	$(".a-3").click(function(){
+		$(".a-3").css({border:"1px solid #f00"})
+		$(".a-1").css({border:"0"})
+		$(".a-2").css({border:"0"})
+		$(".neirong3").css({display:"block"})
+		$(".neirong1").css({display:"none"})
+		$(".neirong2").css({display:"none"})
+	})
+	

@@ -182,17 +182,17 @@
     		<div class="main-t clear">
         		<div class="box" id="box"></div>
         		<div class="box2">
-        			<h3>HLA海澜之家撞色圆领T恤2017秋季新品舒适长袖T恤男HNTAD3V030A</h3>
-        			<p>商品编号：HNTAD3V030A</p>
+        			<h3 id="h3"></h3>
+        			<p id="p"></p>
         			<div class="jiage">
         				<b>价格</b>
-        				<span>￥178.00</span>
+        				<span id="sss"></span>
         			</div>
         			<div class="yanse">
         				<ul>
         					<li>颜色</li>
-        					<li>
-        						<img src="images/HNTAD3V030A_11803_1--w_34_h_34.jpg"/>
+        					<li id="li">
+        						<img id="img" src=""/>
         						<i></i>
         					</li>
         				</ul>
@@ -473,60 +473,30 @@
 
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="js/caidan.js"></script>
-<script type="text/javascript" src="js/xiangqing.js"></script>
+<script type="text/javascript" src="js/cookieTools.js" ></script>
 <script>
-	$(".a1").click(function(){
-		
-		$(".a1").css({border:"2px solid #C40000"})
-		$(".a2").css({border:"2px solid #b8b7bd"})
-		$(".a3").css({border:"2px solid #b8b7bd"})
-		$(".a4").css({border:"2px solid #b8b7bd"})
+$(function(){
+		var goodsId = getCookie("GoodsId");
+		console.log(goodsId)
+		$.get("php/getGoodsInfo.php",{"goodsId":goodsId},function(date){
+			
+	var obj=eval("("+date+")");
+		console.log(obj);
+		$("#sss").html("￥"+obj.goodsPrice);
+		$("#h3").html(obj.goodsDesc);
+		$("#p").html(obj.goodsType);
+		$("#img").attr("src",obj.beiyong1); 
+		$("#box").children().children("ul").children("li").eq(1).children("img").attr("src",obj.beiyong2);
+		$("#box").children().children("ul").children("li").eq(2).children("img").attr("src",obj.beiyong3);
+		$("#box").children().children("ul").children("li").eq(3).children("img").attr("src",obj.beiyong4);
+		$("#box").children().children("ul").children("li").eq(4).children("img").attr("src",obj.beiyong5);
+		$("#box").children().children("ul").children("li").eq(5).children("img").attr("src",obj.beiyong6);
+		})
+})	
 
-	})
-	
-	$(".a2").click(function(){
-		$(".a2").css({border:"2px solid #C40000"})
-		$(".a1").css({border:"2px solid #b8b7bd"})
-		$(".a3").css({border:"2px solid #b8b7bd"})
-		$(".a4").css({border:"2px solid #b8b7bd"})
-		
-	})
-	$(".a3").click(function(){
-		$(".a3").css({border:"2px solid #C40000"})
-		$(".a2").css({border:"2px solid #b8b7bd"})
-		$(".a1").css({border:"2px solid #b8b7bd"})
-		$(".a4").css({border:"2px solid #b8b7bd"})
-		
-	})
-	$(".a4").click(function(){
-		$(".a4").css({border:"2px solid #C40000"})
-		$(".a2").css({border:"2px solid #b8b7bd"})
-		$(".a3").css({border:"2px solid #b8b7bd"})
-		$(".a1").css({border:"2px solid #b8b7bd"})
-		
-	})
-	$(".a-1").click(function(){
-		$(".a-1").css({border:"1px solid #f00"})
-		$(".a-2").css({border:"0"})
-		$(".a-3").css({border:"0"})
-		$(".neirong1").css({display:"block"})
-		$(".neirong2").css({display:"none"})
-		$(".neirong3").css({display:"none"})
-	})
-	$(".a-2").click(function(){
-		$(".a-2").css({border:"1px solid #f00"})
-		$(".a-1").css({border:"0"})
-		$(".a-3").css({border:"0"})
-		$(".neirong2").css({display:"block"})
-		$(".neirong1").css({display:"none"})
-		$(".neirong3").css({display:"none"})
-	})
-	$(".a-3").click(function(){
-		$(".a-3").css({border:"1px solid #f00"})
-		$(".a-1").css({border:"0"})
-		$(".a-2").css({border:"0"})
-		$(".neirong3").css({display:"block"})
-		$(".neirong1").css({display:"none"})
-		$(".neirong2").css({display:"none"})
-	})
+
+
+
+
 </script>
+<script type="text/javascript" src="js/xiangqing.js"></script>

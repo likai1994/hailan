@@ -277,8 +277,7 @@
             </div>
         </div>
     </section>
-    
-       
+
     <section id="guide">
     	<div class="guide">
 	    	<ul>
@@ -332,6 +331,7 @@
 </html>
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="js/caidan.js"></script>
+<script type="text/javascript" src="js/cookieTools.js" ></script>
 <script>
 	$(function(){$(".i1").click(function(){$('body,html').animate({scrollTop:0},400);return false;});})
 </script>
@@ -344,16 +344,24 @@ $(function(){
 		success:function(data){
 		var obj=eval(data);
 		for(i=0;i<40;i++){
+			//let id=obj[i].goodsId;
 			let goodsId=obj[i].goodsId;//1
 			let goodsPrice=obj[i].goodsPrice;//价格
 			let goodsImg=obj[i].goodsImg;//图片
 			let goodsName=obj[i].goodsName;//名字
-			let str="<li><a href='xiangqing.html'><img src='"+goodsImg+"'/><p><i>"+goodsName+"</i></p><span>售价<b>￥"+goodsPrice+".00</b></span></a></li>";
-			$(".list").append(str);
-		}
+			let str="<li ord="+goodsId+"><a href='#'><img src='"+goodsImg+"'/><p><i>"+goodsName+"</i></p><span>售价<b>￥"+goodsPrice+".00</b></span></a></li>";
+			$(".list").append(str);		
+		}		
 		}
 	});
 })
+$(".list").on("click","li",function(){
+			var GoodsId=$(this).attr("ord"); 
+			saveCookie("GoodsId",GoodsId,7);
+			location.href=("xiangqing.html")
+	});
+
+
 $(function(){
 	$.ajax({
 		url:"php/rexiao.php",
