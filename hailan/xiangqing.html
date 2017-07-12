@@ -198,7 +198,7 @@
         				</ul>
         			</div>
         			<div class="chima clear">
-        				<ul>
+        				<ul id="liis">
         					<li class="li1">尺码</li>
         					<li class="li">
         						<a class="a1" href="javascript:void(0)">
@@ -313,7 +313,7 @@
 	       				<a class="a-3" href="javascript:void(0)">疑难提问</a>
 	       			</div>
 	       			<div class="neirong1">
-	       				<img src="images/xuanxiangka.jpg"/>
+	       				<img id="xuanxiang" src=""/>
 	       			</div>
 	       			<div class="neirong2 clear">
 	       				<p class=".p">用户评价</p>
@@ -474,6 +474,7 @@
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="js/caidan.js"></script>
 <script type="text/javascript" src="js/cookieTools.js" ></script>
+<script type="text/javascript" src="js/xiangqing.js"></script>
 <script>
 $(function(){
 		var goodsId = getCookie("GoodsId");
@@ -486,17 +487,17 @@ $(function(){
 		$("#h3").html(obj.goodsDesc);
 		$("#p").html(obj.goodsType);
 		$("#img").attr("src",obj.beiyong1); 
+		$("#xuanxiang").attr("src",obj.beiyong7);
+
 		$("#box").children().children("ul").children("li").eq(1).children("img").attr("src",obj.beiyong2);
 		$("#box").children().children("ul").children("li").eq(2).children("img").attr("src",obj.beiyong3);
 		$("#box").children().children("ul").children("li").eq(3).children("img").attr("src",obj.beiyong4);
 		$("#box").children().children("ul").children("li").eq(4).children("img").attr("src",obj.beiyong5);
 		$("#box").children().children("ul").children("li").eq(5).children("img").attr("src",obj.beiyong6);
-		})
+	})
 })	
 
 
 
-
-
 </script>
-<script type="text/javascript" src="js/xiangqing.js"></script>
+

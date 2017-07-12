@@ -231,3 +231,15 @@ $(function(){
 		$(".neirong2").css({display:"none"})
 	})
 	
+
+	var num=1
+	$(".shang").click(function(){
+		num++
+		$("#jianshu").val(num);
+	})
+	$(".xia").click(function(){
+		num--;
+		if(num<=0){num=1}
+		$("#jianshu").val(num);
+		
+	})

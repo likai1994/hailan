@@ -2,7 +2,7 @@
 /* CSS Document */
 .margin{width:1180px;margin:0 auto;}
 header{background:#eeeeee;height:30px;border-bottom:1px solid #cccccc;}
-header .header .header-l{float:left; font:12px/30px "";}
+header .header .header-l{float:left; font:12px/30px "";height:30px;width:472px;}
 header .header .header-l .span{color:#666;margin-left:5px;}
 
 header .header .header-l .a{color:#333; font-weight:700;}

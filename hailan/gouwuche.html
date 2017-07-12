@@ -2,25 +2,24 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>注册登录</title>
+<title>购物车</title>
 <link href="css/public.css" rel="stylesheet" type="text/css">
-<link href="css/zhuce.css" rel="stylesheet" type="text/css">
+<link href="css/gouwuche.css" rel="stylesheet" type="text/css">
 </head>
-
-<body onload="changeyzm()">
+<body>
 	<header>
     	<div class="header margin">
         	<div class="header-l clear">
                 <span class="span">你好，欢迎来到男士服饰！</span>
-                <a href="denglu.html" class="a">请登录</a>
+                <a href="zhuce.html" class="register">免费注册</a>
                 <span>|</span>
                 <b>合作账号登录</b>
                  <a href="#"><img src="images/logo10.jpg"/></a>
                  <a href="#"><img src="images/qqimg.jpg"/></a>
                  <a href="#"><img src="images/taobaoimg.jpg"/></a>
-                
                 <span>|</span>
-                <a href="#" class="register">免费注册</a>
+                <a href="denglu.html" class="a" id="denglu">请登录</a>
+                <u id="u">注销</u>
             </div>
             <div class="header-r">
             	<ul>
@@ -75,7 +74,7 @@
                 	<span>|</span>
                 </li>
                 <li class="shangpin">
-                	<a href="liebiao.html">夏季商品</a>
+                	<a href="#">夏季商品</a>
                 	<span>|</span>
                 </li>
                 <li class="duanxiu">
@@ -132,7 +131,7 @@
                 <li><a href="#">休闲九分裤</a></li>
                 <li><a href="#">牛仔中裤</a></li>
                 <li><a href="#">牛仔九分裤</a></li>
-                <li><a href="#">轻薄夹克</a></li>
+                <li class="li02"><a href="#">轻薄夹克</a></li>
             </ul>
     	</div>
         <div id="duanxiu">
@@ -142,71 +141,114 @@
                 <li><a href="#">POLO</a></li>
                 <li><a href="#">时尚修身</a></li>
                 <li><a href="#">宽松舒适</a></li>
-                <li><a href="#">潮趣印花</a></li>
+                <li class="li02"><a href="#">潮趣印花</a></li>
                 
             </ul>
     	</div>
         <div id="chenshan">
             <ul>
-                <li><a href="#">短袖衬衫</a></li>
+                <li class="li02"><a href="#">短袖衬衫</a></li>
             </ul>
     	</div>
         <div id="xiuxianzhong">
             <ul>
-                <li><a href="#">休闲中裤</a></li>
+                <li class="li02"><a href="#">休闲中裤</a></li>
             </ul>
     	</div>
         <div id="niuzaizhong">
             <ul>
-                <li><a href="#">牛仔中裤</a></li>
+                <li class="li02"><a href="#">牛仔中裤</a></li>
             </ul>
     	</div>
         <div id="xiuxian">
             <ul>
                 <li><a href="#">休闲中裤</a></li>
                 <li><a href="#">休闲九分裤</a></li>
-                <li><a href="#">休闲长裤</a></li>
+                <li class="li02"><a href="#">休闲长裤</a></li>
             </ul>
     	</div>
         <div id="niuzaiku">
             <ul>
                 <li><a href="#">牛仔中裤</a></li>
                 <li><a href="#">牛仔九分裤</a></li>
-                <li><a href="#">牛仔长裤</a></li>
+                <li class="li02"><a href="#">牛仔长裤</a></li>
             </ul>
     	</div>
     </nav>
-    <section id="zhuce" class="margin">
-    	<div class="zhuce">
-        	<div class="zhuce-t">
-            	<a href="shouye.html">首页</a><b>></b><span>免费注册</span>
-            </div>
-        	<div class="zhuce-c">
-            	<b>使用手机号注册</b>
-            </div>
-            <div class="zhuce-b">
-            	<form class="form">
-	            <div class="box1"><span>手机号： </span><input class="put1" id="put1" name="userName" placeholder="请输入手机号"/><i class="i-1" style="margin-left: 5px;"></i></div>
-	            <div class="box2"><span>设定密码： </span><input class="put2" id="put2" placeholder="请至少输入6位密码" style="margin-bottom:5px ;" type="password" name="userPass"/></div>
-	            <div id="div1" style="border:1px black solid;width:60px;height:10px;float:left;margin-left:191px;"></div>
-				<div id="div2" style="border:1px black solid;width:60px;height:10px;float:left;"></div>
-				<div id="div3" style="border:1px black solid;width:60px;height:10px;float:left;"></div>
-	            <div class="box3"><span>确认密码： </span><input class="put3" id="put3" placeholder="请再次确认密码" type="password"/></div>
-	            <div class="box4">
-	            	<span>验证码：</span>
-	            	<input class="put4" type="text"/>
-	            	<span id="showCode" style="display:inline-block;border-radius:20px 5px 20px 5px;text-align:center;margin-left:5px;background:#30a31f;width:48px;onclick="changeyzm()"></span>
-	            	<a href="javascript:void(0)" onclick="changeyzm()">看不清，换一张</a>
-	            </div>
-	            <div class="box5"><span>手机验证码：</span><input class="put5" type="text"/><input type="button" value="获取验证码" style="height:34px;width:158px; background:#d9534f; border-radius:5px;color:#fff;margin-left:16px"/></div>
-	            <input class="put6" type="button" value="提交" style="width:98px;height:32px;color:#fff; background:#d9534f;border-radius:5px;margin:56px 294px"/>
- 	           	</form>
-            </div>
-            
-        </div>
-    </section>
-      
-    <section id="guide">
+	<!--购物车-->
+	<section id="Shopping" class="margin">
+		<div class="shouye">
+			<a href="shouye.html">首页</a><b>></b><span>购物车</span>
+		</div>
+		<div class="kong">
+			<h3>您的购物袋没有商品。</h3>
+			<p>购物袋应该为您购物提供服务。请让它物有所值－可将海澜之家里你喜欢的商品放入这里。</p>
+			<p>从<a href="shouye.html">海澜之家主页</a>继续购买商品或者访问收藏夹</p>
+		</div>
+		<div class="wan">
+			<table id="tab">
+				<tr class="tr">
+					<td style="width:400px;">商品名称</td>
+					<td style="width:100px;">库存</td>
+					<td style="width:150px;">价格</td>
+					<td style="width:200px;">数量</td>
+					<td style="width:150px;">小计</td>
+					<td style="width:170px;">操作</td>
+				</tr>
+				<tr class="sp">
+					<td class="td1">
+						<img src="images/HWFAD3V015A_10827_1--w_100_h_100.jpg"/>
+						<p>HLA海澜之家连帽印花风衣2017秋季新品中长款外套男HWFAD3V015A</p>
+						<span>尺码：165/84A（46）</span>
+					</td>
+					<td class="td2">有货</td>
+					<td class="td3">￥498.00</td>
+					<td class="td4">
+						<a class="jia" href="javascript:void(0)"><img src="images/jian.jpg"/></a>
+						<input type="text" value="1" disabled="disabled"/>
+						<a class="jian" href="javascript:void(0)"><img src="images/jia.jpg"/></a>
+					</td>
+					<td class="td5">￥498.00</td>
+					<td class="td6">
+						<a href="javascript:void(0)"><img src="images/shanchu.jpg"/></a>
+					</td>
+				</tr>
+			</table>
+			<div class="jiesuan">
+				<div class="jixu">
+					<a class="jixu1" href="shouye.html">继续购物</a>
+					<a class="jixu2" href="javascript:void(0)">清空购物车</a>
+				</div>
+				<div class="zongji">
+					<p>总计：</p>
+					<div class="zongshu">
+						<b>商品总数：</b>
+						<span>1</span>
+					</div>
+					<div class="zonge">
+						<b>商品总额：</b>
+						<span>￥158.00</span>
+					</div>
+					<a class="jie" href="javascript:void(0)">结算</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<section id="guide">
     	<div class="guide">
 	    	<ul>
 	        	<li>
@@ -247,19 +289,29 @@
 	            <p>地址：江苏省江阴市海澜服装工业城</p>
 	            <p>电话：0510-86700300</p>
 	        </div>
-       	</div>
+	    </div>
     </section>
     <footer>
     	<p>工信部备案苏ICP备11069023</p>
         <p>增值电信业务经营许可证·苏B1-20110038</p>
         <p>&copy;2014-2018 江阴新风尚电子商务有限公司 版权所有 HLA Icn. All Rights Reserved</p>
     </footer>
-   
 </body>
 </html>
 <script type="text/javascript" src="js/jquery-1.8.3.js"></script>
 <script type="text/javascript" src="js/caidan.js"></script>
-<script type="text/javascript" src="js/zhuce.js" ></script>
-<script type="text/javascript">
-	
+<script type="text/javascript" src="js/cookieTools.js" ></script>
+<script>
+	$(document).ready(function(){
+	  	if(getCookie("userId")!=""){
+	 		$("#denglu").html(getCookie("userId"));
+	 		$("#u").css("display","block")
+	 	}
+	});
+	$("#u").click(function(){
+		removeCookie("userId");
+		$("#denglu").html("请登录")
+		$("#u").css("display","none")
+	})
+
 </script>
